@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5A3527C5-51BB-4FE6-879A-E7627E376AAE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "APIGateways", "APIGateways", "{CA392611-BCBD-4492-8DF2-31F7AFAAE8A5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Microservices", "Microservices", "{8B356D86-B3B3-4EEB-BEEA-2962617AE9B3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EventBus", "EventBus", "{812F5DDB-4F1F-4DDE-A2B6-965274FC765C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Clients", "Clients", "{A7E9A55B-FDA4-4ED3-A3B9-CB2BBA46B612}"
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CA392611-BCBD-4492-8DF2-31F7AFAAE8A5} = {5A3527C5-51BB-4FE6-879A-E7627E376AAE}
+		{8B356D86-B3B3-4EEB-BEEA-2962617AE9B3} = {5A3527C5-51BB-4FE6-879A-E7627E376AAE}
+		{812F5DDB-4F1F-4DDE-A2B6-965274FC765C} = {5A3527C5-51BB-4FE6-879A-E7627E376AAE}
+		{A7E9A55B-FDA4-4ED3-A3B9-CB2BBA46B612} = {5A3527C5-51BB-4FE6-879A-E7627E376AAE}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {519019AB-98A3-46DE-8E37-B43D13919943}
+	EndGlobalSection
+EndGlobal
