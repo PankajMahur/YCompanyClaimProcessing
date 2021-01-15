@@ -15,7 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Clients", "Clients", "{A7E9
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{8937415F-3C53-4A40-8CEB-A5A10771663F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YComapny.WebGateway", "src\APIGateways\Web\YComapny.WebGateway\YComapny.WebGateway.csproj", "{1121E424-2DCA-4016-A79F-749C73FC0565}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YCompany.WebGateway", "src\APIGateways\Web\YComapny.WebGateway\YCompany.WebGateway.csproj", "{1121E424-2DCA-4016-A79F-749C73FC0565}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

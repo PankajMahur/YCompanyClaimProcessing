@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace YComapny.WebGateway
+namespace YCompany.WebGateway
 {
     public class Program
     {
