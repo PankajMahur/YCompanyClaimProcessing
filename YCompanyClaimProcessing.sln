@@ -21,13 +21,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YCompany.Web.HttpAggregator
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mobile", "Mobile", "{13FF26EC-F7D6-40A7-8488-0C5E0A663C09}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YCompany.MobileGateway", "src\APIGateways\Mobile\YCompany.MobileGateway\YCompany.MobileGateway.csproj", "{048909B6-178C-418E-A64C-2A4E10BB2C2C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YCompany.MobileGateway", "src\APIGateways\Mobile\YCompany.MobileGateway\YCompany.MobileGateway.csproj", "{048909B6-178C-418E-A64C-2A4E10BB2C2C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YCompany.Mobile.HttpAggregator", "src\APIGateways\Mobile\YCompany.Mobile.HttpAggregator\YCompany.Mobile.HttpAggregator.csproj", "{A41B8C2F-8116-42BE-86F5-674A0223FF3C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YCompany.Mobile.HttpAggregator", "src\APIGateways\Mobile\YCompany.Mobile.HttpAggregator\YCompany.Mobile.HttpAggregator.csproj", "{A41B8C2F-8116-42BE-86F5-674A0223FF3C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{7BF70C60-B35F-4308-953E-8A940921E224}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YCompany.MicroRabbit.Domain.Core", "src\Domain\YCompany.MicroRabbit.Domain.Core\YCompany.MicroRabbit.Domain.Core.csproj", "{3FF00A01-A3E4-45F2-ABBE-09ADC7A0A7EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YCompany.MicroRabbit.Domain.Core", "src\Domain\YCompany.MicroRabbit.Domain.Core\YCompany.MicroRabbit.Domain.Core.csproj", "{3FF00A01-A3E4-45F2-ABBE-09ADC7A0A7EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YCompany.Microservice.RabbitMq.Infra.Bus", "src\EventBus\YCompany.Microservice.RabbitMq.Infra.Bus\YCompany.Microservice.RabbitMq.Infra.Bus.csproj", "{3F35679E-1887-40CB-B5C5-C403AF4EEBF5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,6 +57,10 @@ Global
 		{3FF00A01-A3E4-45F2-ABBE-09ADC7A0A7EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3FF00A01-A3E4-45F2-ABBE-09ADC7A0A7EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3FF00A01-A3E4-45F2-ABBE-09ADC7A0A7EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F35679E-1887-40CB-B5C5-C403AF4EEBF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F35679E-1887-40CB-B5C5-C403AF4EEBF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F35679E-1887-40CB-B5C5-C403AF4EEBF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F35679E-1887-40CB-B5C5-C403AF4EEBF5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -72,6 +78,7 @@ Global
 		{A41B8C2F-8116-42BE-86F5-674A0223FF3C} = {13FF26EC-F7D6-40A7-8488-0C5E0A663C09}
 		{7BF70C60-B35F-4308-953E-8A940921E224} = {5A3527C5-51BB-4FE6-879A-E7627E376AAE}
 		{3FF00A01-A3E4-45F2-ABBE-09ADC7A0A7EB} = {7BF70C60-B35F-4308-953E-8A940921E224}
+		{3F35679E-1887-40CB-B5C5-C403AF4EEBF5} = {812F5DDB-4F1F-4DDE-A2B6-965274FC765C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {519019AB-98A3-46DE-8E37-B43D13919943}
