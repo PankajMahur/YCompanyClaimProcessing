@@ -25,6 +25,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YCompany.MobileGateway", "s
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YCompany.Mobile.HttpAggregator", "src\APIGateways\Mobile\YCompany.Mobile.HttpAggregator\YCompany.Mobile.HttpAggregator.csproj", "{A41B8C2F-8116-42BE-86F5-674A0223FF3C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{7BF70C60-B35F-4308-953E-8A940921E224}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YCompany.MicroRabbit.Domain.Core", "src\Domain\YCompany.MicroRabbit.Domain.Core\YCompany.MicroRabbit.Domain.Core.csproj", "{3FF00A01-A3E4-45F2-ABBE-09ADC7A0A7EB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +51,10 @@ Global
 		{A41B8C2F-8116-42BE-86F5-674A0223FF3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A41B8C2F-8116-42BE-86F5-674A0223FF3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A41B8C2F-8116-42BE-86F5-674A0223FF3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FF00A01-A3E4-45F2-ABBE-09ADC7A0A7EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FF00A01-A3E4-45F2-ABBE-09ADC7A0A7EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FF00A01-A3E4-45F2-ABBE-09ADC7A0A7EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FF00A01-A3E4-45F2-ABBE-09ADC7A0A7EB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,6 +70,8 @@ Global
 		{13FF26EC-F7D6-40A7-8488-0C5E0A663C09} = {CA392611-BCBD-4492-8DF2-31F7AFAAE8A5}
 		{048909B6-178C-418E-A64C-2A4E10BB2C2C} = {13FF26EC-F7D6-40A7-8488-0C5E0A663C09}
 		{A41B8C2F-8116-42BE-86F5-674A0223FF3C} = {13FF26EC-F7D6-40A7-8488-0C5E0A663C09}
+		{7BF70C60-B35F-4308-953E-8A940921E224} = {5A3527C5-51BB-4FE6-879A-E7627E376AAE}
+		{3FF00A01-A3E4-45F2-ABBE-09ADC7A0A7EB} = {7BF70C60-B35F-4308-953E-8A940921E224}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {519019AB-98A3-46DE-8E37-B43D13919943}
