@@ -1,10 +1,15 @@
 ﻿using MediatR;
+using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
+using Polly;
+using Polly.Retry;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
+using RabbitMQ.Client.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using YCompany.Library.MicroRabbit.Core.Bus;
@@ -15,30 +20,63 @@ namespace YCompany.Library.RabbitMQ.Infra.Bus
 {
     public sealed class RabbitMQBus : IEventBus
     {
+        const string MESSAGE_BROKER_NAME = "YCompanyEventBus";
         private readonly IMediator _medidator;
+        private readonly IRabbitMQPersistentConnection _rabbitMQPersistentConnection;
+        private readonly ILogger<RabbitMQBus> _logger;
         private readonly Dictionary<string, List<Type>> _handlers;
         private readonly List<Type> _eventTypes;
+        private readonly int _retryCount;
 
-        public RabbitMQBus(IMediator mediator)
+        public RabbitMQBus(IMediator mediator, IRabbitMQPersistentConnection rabbitMQPersistentConnection
+                                , ILogger<RabbitMQBus> logger, int retryCount = 5)
         {
             _medidator = mediator;
+            _rabbitMQPersistentConnection = rabbitMQPersistentConnection;
+            _logger = logger;
+            _retryCount = retryCount;
             _handlers = new Dictionary<string, List<Type>>();
             _eventTypes = new List<Type>();
         }
 
         public void Publish<T>(T @event) where T : Event
         {
-            var factory = new ConnectionFactory() { HostName = "TBD" };
-            using (var connection = factory.CreateConnection())
-                using(var channel = connection.CreateModel())
+            if (!_rabbitMQPersistentConnection.IsConnected)
             {
-                var eventName = @event.GetType().Name;
-                channel.QueueDeclare(eventName, false, false, false, null);
-                var message = JsonConvert.SerializeObject(@event);
-                var body = Encoding.UTF8.GetBytes(message);
-                channel.BasicPublish("", eventName, null, body);
+                _rabbitMQPersistentConnection.TryConnect();
             }
 
+            var policy = RetryPolicy.Handle<BrokerUnreachableException>()
+                .Or<SocketException>()
+                .WaitAndRetry(_retryCount, retryAttempt => TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)), (ex, time) =>
+                {
+                    _logger.LogWarning(ex, "Could not publish event: {EventId} after {Timeout}s ({ExceptionMessage})", @event.Id, $"{time.TotalSeconds:n1}", ex.Message);
+                });
+            
+            var eventName = @event.GetType().Name;
+            
+            _logger.LogTrace("Creating RabbitMQ channel to publish event: {EventId} ({EventName})", @event.Id, eventName);
+            
+            using (var channel = _rabbitMQPersistentConnection.CreateModel())
+            {
+                _logger.LogTrace("Declaring RabbitMQ exchange to publish event: {EventId}", @event.Id);
+                channel.ExchangeDeclare(exchange: MESSAGE_BROKER_NAME, type: "direct");
+
+                policy.Execute(() => 
+                {
+                    var properties = channel.CreateBasicProperties();
+                    properties.DeliveryMode = 2; 
+                    _logger.LogTrace("Publishing event to RabbitMQ: {EventId}", @event.Id);
+                    var message = JsonConvert.SerializeObject(@event);
+                    var body = Encoding.UTF8.GetBytes(message);
+                    channel.BasicPublish(
+                            exchange: MESSAGE_BROKER_NAME,
+                            routingKey: eventName,
+                            mandatory: true,
+                            basicProperties: properties,
+                            body: body);
+                });                
+            }
         }
 
         public Task SendCommand<T>(T command) where T : Command
@@ -97,10 +135,10 @@ namespace YCompany.Library.RabbitMQ.Infra.Bus
 
         private async Task ProcessEvent(string eventName, string message)
         {
-            if(_handlers.ContainsKey(eventName))
+            if (_handlers.ContainsKey(eventName))
             {
                 var subscriptions = _handlers[eventName];
-                foreach(var subscription in subscriptions)
+                foreach (var subscription in subscriptions)
                 {
                     var handler = Activator.CreateInstance(subscription);
                     if (handler == null) continue;
