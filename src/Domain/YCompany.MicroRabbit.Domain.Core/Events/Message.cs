@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace YCompany.MicroRabbit.Domain.Core.Events
+namespace YCompany.Library.MicroRabbit.Core.Events
 {
     public abstract class Message : IRequest<bool>
     {

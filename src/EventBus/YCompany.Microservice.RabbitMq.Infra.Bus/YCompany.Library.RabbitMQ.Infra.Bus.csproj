@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Domain\YCompany.MicroRabbit.Domain.Core\YCompany.MicroRabbit.Domain.Core.csproj" />
+    <ProjectReference Include="..\..\Domain\YCompany.MicroRabbit.Domain.Core\YCompany.Library.MicroRabbit.Core.csproj" />
   </ItemGroup>
 
 </Project>

@@ -7,11 +7,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using YCompany.MicroRabbit.Domain.Core.Bus;
-using YCompany.MicroRabbit.Domain.Core.Commands;
-using YCompany.MicroRabbit.Domain.Core.Events;
+using YCompany.Library.MicroRabbit.Core.Bus;
+using YCompany.Library.MicroRabbit.Core.Commands;
+using YCompany.Library.MicroRabbit.Core.Events;
 
-namespace YCompany.Microservice.RabbitMq.Infra.Bus
+namespace YCompany.Library.RabbitMQ.Infra.Bus
 {
     public sealed class RabbitMQBus : IEventBus
     {

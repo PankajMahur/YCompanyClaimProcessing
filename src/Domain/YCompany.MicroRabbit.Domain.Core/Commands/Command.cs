@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using YCompany.MicroRabbit.Domain.Core.Events;
+using YCompany.Library.MicroRabbit.Core.Events;
 
-namespace YCompany.MicroRabbit.Domain.Core.Commands
+namespace YCompany.Library.MicroRabbit.Core.Commands
 {
     public abstract class Command : Message
     {

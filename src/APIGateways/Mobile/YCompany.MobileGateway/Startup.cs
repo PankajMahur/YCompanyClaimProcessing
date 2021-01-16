@@ -12,6 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using YCompany.Mobile.HttpAggregator;
 
 namespace YCompany.MobileGateway
 {
@@ -27,7 +28,7 @@ namespace YCompany.MobileGateway
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            ServiceCollectionExt.AddHttpAggregator(services);
+            services.AddTransient<IMobileHttpAggregator, MobileHttpAggregator>();
             services.AddOcelot();
         }
 

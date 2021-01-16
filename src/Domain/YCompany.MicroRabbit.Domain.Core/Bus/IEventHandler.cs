@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
-using YCompany.MicroRabbit.Domain.Core.Events;
+﻿using System.Threading.Tasks;
+using YCompany.Library.MicroRabbit.Core.Events;
 
-namespace YCompany.MicroRabbit.Domain.Core.Bus
+namespace YCompany.Library.MicroRabbit.Core.Bus
 {
     public interface IEventHandler<in TEvent> : IEventHandler
         where TEvent : Event
