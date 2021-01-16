@@ -1,16 +1,12 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <OutputType>Library</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Ocelot" Version="16.0.1" />
   </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\YCompany.Web.HttpAggregator\YCompany.Web.HttpAggregator.csproj" />
-  </ItemGroup>
-
 
 </Project>

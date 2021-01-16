@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using YCompany.Web.HttpAggregator;
 
 namespace YCompany.WebGateway
 {
@@ -12,9 +13,9 @@ namespace YCompany.WebGateway
         /// AddHttpAggregators
         /// </summary>
         /// <param name="services">container services</param>
-        public static void AddHttpAggregators(this IServiceCollection services)
+        public static void AddHttpAggregator(this IServiceCollection services)
         {
-            //add all aggregators
+            services.AddTransient<IWebHttpAggregator, WebHttpAggregator>();
         }
     }
 }

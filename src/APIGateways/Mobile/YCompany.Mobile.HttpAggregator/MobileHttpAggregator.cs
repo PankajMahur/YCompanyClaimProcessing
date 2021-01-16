@@ -5,13 +5,13 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace YCompany.Web.HttpAggregator
+namespace YCompany.Mobile.HttpAggregator
 {
-    public class WebHttpAggregator : IWebHttpAggregator
+    public class MobileHttpAggregator : IMobileHttpAggregator
     {
         public Task<DownstreamResponse> Aggregate(List<HttpContext> responses)
         {
-            return null;
+            throw new NotImplementedException();
         }
     }
 }

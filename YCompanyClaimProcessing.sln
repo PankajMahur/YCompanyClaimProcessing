@@ -17,7 +17,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{8937415F-3C5
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YCompany.WebGateway", "src\APIGateways\Web\YCompany.WebGateway\YCompany.WebGateway.csproj", "{400BCD6C-9FED-4D4E-A383-A151F6DE7412}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YCompany.Web.HttpAggregator", "src\APIGateways\Web\YCompany.Web.HttpAggregator\YCompany.Web.HttpAggregator.csproj", "{A2BAFD99-2CA6-41F4-9E41-E8B2FD8965DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YCompany.Web.HttpAggregator", "src\APIGateways\Web\YCompany.Web.HttpAggregator\YCompany.Web.HttpAggregator.csproj", "{A2BAFD99-2CA6-41F4-9E41-E8B2FD8965DE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mobile", "Mobile", "{13FF26EC-F7D6-40A7-8488-0C5E0A663C09}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YCompany.MobileGateway", "src\APIGateways\Mobile\YCompany.MobileGateway\YCompany.MobileGateway.csproj", "{048909B6-178C-418E-A64C-2A4E10BB2C2C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YCompany.Mobile.HttpAggregator", "src\APIGateways\Mobile\YCompany.Mobile.HttpAggregator\YCompany.Mobile.HttpAggregator.csproj", "{A41B8C2F-8116-42BE-86F5-674A0223FF3C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +39,14 @@ Global
 		{A2BAFD99-2CA6-41F4-9E41-E8B2FD8965DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A2BAFD99-2CA6-41F4-9E41-E8B2FD8965DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A2BAFD99-2CA6-41F4-9E41-E8B2FD8965DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{048909B6-178C-418E-A64C-2A4E10BB2C2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{048909B6-178C-418E-A64C-2A4E10BB2C2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{048909B6-178C-418E-A64C-2A4E10BB2C2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{048909B6-178C-418E-A64C-2A4E10BB2C2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A41B8C2F-8116-42BE-86F5-674A0223FF3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A41B8C2F-8116-42BE-86F5-674A0223FF3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A41B8C2F-8116-42BE-86F5-674A0223FF3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A41B8C2F-8116-42BE-86F5-674A0223FF3C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -45,6 +59,9 @@ Global
 		{8937415F-3C53-4A40-8CEB-A5A10771663F} = {CA392611-BCBD-4492-8DF2-31F7AFAAE8A5}
 		{400BCD6C-9FED-4D4E-A383-A151F6DE7412} = {8937415F-3C53-4A40-8CEB-A5A10771663F}
 		{A2BAFD99-2CA6-41F4-9E41-E8B2FD8965DE} = {8937415F-3C53-4A40-8CEB-A5A10771663F}
+		{13FF26EC-F7D6-40A7-8488-0C5E0A663C09} = {CA392611-BCBD-4492-8DF2-31F7AFAAE8A5}
+		{048909B6-178C-418E-A64C-2A4E10BB2C2C} = {13FF26EC-F7D6-40A7-8488-0C5E0A663C09}
+		{A41B8C2F-8116-42BE-86F5-674A0223FF3C} = {13FF26EC-F7D6-40A7-8488-0C5E0A663C09}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {519019AB-98A3-46DE-8E37-B43D13919943}

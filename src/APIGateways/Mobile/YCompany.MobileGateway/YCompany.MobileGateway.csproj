@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\YCompany.Web.HttpAggregator\YCompany.Web.HttpAggregator.csproj" />
+    <ProjectReference Include="..\YCompany.Mobile.HttpAggregator\YCompany.Mobile.HttpAggregator.csproj" />
   </ItemGroup>
 
 
