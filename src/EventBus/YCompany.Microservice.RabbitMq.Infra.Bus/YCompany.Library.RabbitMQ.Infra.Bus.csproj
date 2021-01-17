@@ -7,12 +7,14 @@
   <ItemGroup>
     <PackageReference Include="MediatR" Version="9.0.0" />
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="5.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     <PackageReference Include="Polly" Version="7.2.1" />
     <PackageReference Include="RabbitMQ.Client" Version="6.2.1" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\AppSettings.Models\YCompany.AppSettings.Models\YCompany.AppSettings.Models.csproj" />
     <ProjectReference Include="..\YCompany.MicroRabbit.Domain.Core\YCompany.Library.MicroRabbit.Core.csproj" />
   </ItemGroup>
 

@@ -31,6 +31,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YCompany.Library.RabbitMQ.I
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YCompany.Library.MicroRabbit.Core", "src\EventBus\YCompany.MicroRabbit.Domain.Core\YCompany.Library.MicroRabbit.Core.csproj", "{C5D58E82-A1F8-4DEA-8AD3-056EBEBD90AC}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AppSettings.Models", "AppSettings.Models", "{342C6181-DB4B-4688-A80B-051BBE1462DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YCompany.AppSettings.Models", "src\AppSettings.Models\YCompany.AppSettings.Models\YCompany.AppSettings.Models.csproj", "{EFA16836-D852-496B-A4C5-76A7A2EE9AA2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -65,6 +69,10 @@ Global
 		{C5D58E82-A1F8-4DEA-8AD3-056EBEBD90AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C5D58E82-A1F8-4DEA-8AD3-056EBEBD90AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C5D58E82-A1F8-4DEA-8AD3-056EBEBD90AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFA16836-D852-496B-A4C5-76A7A2EE9AA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFA16836-D852-496B-A4C5-76A7A2EE9AA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFA16836-D852-496B-A4C5-76A7A2EE9AA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFA16836-D852-496B-A4C5-76A7A2EE9AA2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -83,6 +91,8 @@ Global
 		{3F35679E-1887-40CB-B5C5-C403AF4EEBF5} = {812F5DDB-4F1F-4DDE-A2B6-965274FC765C}
 		{FF35A804-591A-4D9D-A5D4-5E6B86910380} = {812F5DDB-4F1F-4DDE-A2B6-965274FC765C}
 		{C5D58E82-A1F8-4DEA-8AD3-056EBEBD90AC} = {812F5DDB-4F1F-4DDE-A2B6-965274FC765C}
+		{342C6181-DB4B-4688-A80B-051BBE1462DD} = {5A3527C5-51BB-4FE6-879A-E7627E376AAE}
+		{EFA16836-D852-496B-A4C5-76A7A2EE9AA2} = {342C6181-DB4B-4688-A80B-051BBE1462DD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {519019AB-98A3-46DE-8E37-B43D13919943}

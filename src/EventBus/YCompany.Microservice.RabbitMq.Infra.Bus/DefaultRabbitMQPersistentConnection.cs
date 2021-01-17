@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using Polly;
 using Polly.Retry;
 using RabbitMQ.Client;
@@ -7,25 +8,29 @@ using RabbitMQ.Client.Exceptions;
 using System;
 using System.IO;
 using System.Net.Sockets;
+using YCompany.AppSettings.Models;
 
 namespace YCompany.Library.RabbitMQ.Infra.Bus
 {
     public class DefaultRabbitMQPersistentConnection : IRabbitMQPersistentConnection
     {
-        private readonly IConnectionFactory _connectionFactory;
+        private readonly ConnectionFactory _connectionFactory;
         private readonly ILogger<DefaultRabbitMQPersistentConnection> _logger;
+        private readonly string _rabbitMQHostName;
         private readonly int _retryCount;
         IConnection _connection;
         bool _disposed;
         object lockObject = new object();
-
-        public DefaultRabbitMQPersistentConnection(IConnectionFactory connectionFactory, ILogger<DefaultRabbitMQPersistentConnection> logger, int retryCount = 5)
+        
+        public DefaultRabbitMQPersistentConnection(IOptions<RabbitMQConnection> connection, ILogger<DefaultRabbitMQPersistentConnection> logger, int retryCount = 5)
         {
-            _connectionFactory = connectionFactory ?? throw new ArgumentNullException(nameof(connectionFactory));
+            _rabbitMQHostName = connection.Value.HostName;
+            _connectionFactory = new ConnectionFactory() { HostName = _rabbitMQHostName, DispatchConsumersAsync = true };
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+
             _retryCount = retryCount;
         }
-        
+
         public bool IsConnected
         {
             get
@@ -39,8 +44,7 @@ namespace YCompany.Library.RabbitMQ.Infra.Bus
             if (!IsConnected)
             {
                 throw new InvalidOperationException("No RabbitMQ connections are available to perform this action");
-            }
-
+            } 
             return _connection.CreateModel();
         }
 

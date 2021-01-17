@@ -107,16 +107,11 @@ namespace YCompany.Library.RabbitMQ.Infra.Bus
 
         private void StartBasicConsume<T>() where T : Event
         {
-            var factory = new ConnectionFactory() { HostName = "TBD", DispatchConsumersAsync = true };
-
-            var connection = factory.CreateConnection();
-            var channel = connection.CreateModel();
             var eventName = typeof(T).Name;
-            channel.QueueDeclare(eventName, false, false, false, null);
+            var channel = CreateConsumerChannel(eventName);            
             var consumer = new AsyncEventingBasicConsumer(channel);
             consumer.Received += Consumer_Received;
             channel.BasicConsume(eventName, true, consumer);
-
         }
 
         private async Task Consumer_Received(object sender, BasicDeliverEventArgs e)
@@ -148,6 +143,33 @@ namespace YCompany.Library.RabbitMQ.Infra.Bus
                     await (Task)concreteType.GetMethod("Handle").Invoke(handler, new object[] { @event });
                 }
             }
+        }
+
+        private IModel CreateConsumerChannel(string eventName)
+        {
+            if (!_rabbitMQPersistentConnection.IsConnected)
+            {
+                _rabbitMQPersistentConnection.TryConnect();
+            }
+
+            _logger.LogTrace("Creating RabbitMQ consumer channel");
+            var channel = _rabbitMQPersistentConnection.CreateModel();
+
+            channel.ExchangeDeclare(exchange: MESSAGE_BROKER_NAME,
+                                    type: "direct");
+
+            channel.QueueDeclare(queue: eventName,
+                                 durable: true,
+                                 exclusive: false,
+                                 autoDelete: false,
+                                 arguments: null);
+
+            channel.CallbackException += (sender, ea) =>
+            {
+                //Recreate rabbit mq cosumer channel on exception                
+            };
+
+            return channel;
         }
     }
 }
