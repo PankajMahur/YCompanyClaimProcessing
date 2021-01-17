@@ -33,13 +33,21 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YCompany.Library.MicroRabbi
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AppSettings.Models", "AppSettings.Models", "{342C6181-DB4B-4688-A80B-051BBE1462DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YCompany.AppSettings.Models", "src\AppSettings.Models\YCompany.AppSettings.Models\YCompany.AppSettings.Models.csproj", "{EFA16836-D852-496B-A4C5-76A7A2EE9AA2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YCompany.AppSettings.Models", "src\AppSettings.Models\YCompany.AppSettings.Models\YCompany.AppSettings.Models.csproj", "{EFA16836-D852-496B-A4C5-76A7A2EE9AA2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Identity", "src\Microservices\Identity\Identity.csproj", "{EFA39E52-2C63-479F-9D31-D329F30BC6F1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Identity", "src\Microservices\Identity\Identity.csproj", "{EFA39E52-2C63-479F-9D31-D329F30BC6F1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AuthCommon", "AuthCommon", "{35FE7AE7-9745-458C-87C7-CDF5BBF9AC22}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YCompany.Gateways.AuthCommon", "src\APIGateways\AuthCommon\YCompany.Gateways.AuthCommon\YCompany.Gateways.AuthCommon.csproj", "{98FAEBE6-AF8A-4081-8910-0631A10AD0FC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YCompany.Gateways.AuthCommon", "src\APIGateways\AuthCommon\YCompany.Gateways.AuthCommon\YCompany.Gateways.AuthCommon.csproj", "{98FAEBE6-AF8A-4081-8910-0631A10AD0FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Claim", "src\Microservices\Claim\Claim.csproj", "{3F00A812-1BBE-418D-B712-B8BB6C8AE05E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{353D2626-2501-4938-B68D-E453C17F1269}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YCompany.Microservices.EntityFrameworkCore", "src\Microservices\Common\YCompany.Microservices.EntityFrameworkCore\YCompany.Microservices.EntityFrameworkCore.csproj", "{5B3F3772-3F37-4D8F-A084-D4C8E12EF87F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YCompany.Microservices.Enums", "src\Microservices\Common\YCompany.Microservices.Enums\YCompany.Microservices.Enums.csproj", "{383A09B2-259F-47CA-BC26-DFFDBAE3791D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -87,6 +95,18 @@ Global
 		{98FAEBE6-AF8A-4081-8910-0631A10AD0FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98FAEBE6-AF8A-4081-8910-0631A10AD0FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98FAEBE6-AF8A-4081-8910-0631A10AD0FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F00A812-1BBE-418D-B712-B8BB6C8AE05E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F00A812-1BBE-418D-B712-B8BB6C8AE05E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F00A812-1BBE-418D-B712-B8BB6C8AE05E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F00A812-1BBE-418D-B712-B8BB6C8AE05E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B3F3772-3F37-4D8F-A084-D4C8E12EF87F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B3F3772-3F37-4D8F-A084-D4C8E12EF87F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B3F3772-3F37-4D8F-A084-D4C8E12EF87F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B3F3772-3F37-4D8F-A084-D4C8E12EF87F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{383A09B2-259F-47CA-BC26-DFFDBAE3791D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{383A09B2-259F-47CA-BC26-DFFDBAE3791D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{383A09B2-259F-47CA-BC26-DFFDBAE3791D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{383A09B2-259F-47CA-BC26-DFFDBAE3791D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -110,6 +130,10 @@ Global
 		{EFA39E52-2C63-479F-9D31-D329F30BC6F1} = {8B356D86-B3B3-4EEB-BEEA-2962617AE9B3}
 		{35FE7AE7-9745-458C-87C7-CDF5BBF9AC22} = {CA392611-BCBD-4492-8DF2-31F7AFAAE8A5}
 		{98FAEBE6-AF8A-4081-8910-0631A10AD0FC} = {35FE7AE7-9745-458C-87C7-CDF5BBF9AC22}
+		{3F00A812-1BBE-418D-B712-B8BB6C8AE05E} = {8B356D86-B3B3-4EEB-BEEA-2962617AE9B3}
+		{353D2626-2501-4938-B68D-E453C17F1269} = {8B356D86-B3B3-4EEB-BEEA-2962617AE9B3}
+		{5B3F3772-3F37-4D8F-A084-D4C8E12EF87F} = {353D2626-2501-4938-B68D-E453C17F1269}
+		{383A09B2-259F-47CA-BC26-DFFDBAE3791D} = {353D2626-2501-4938-B68D-E453C17F1269}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {519019AB-98A3-46DE-8E37-B43D13919943}

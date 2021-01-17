@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Common\YCompany.Microservices.EntityFrameworkCore\YCompany.Microservices.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\Common\YCompany.Microservices.Enums\YCompany.Microservices.Enums.csproj" />
   </ItemGroup>
 
 

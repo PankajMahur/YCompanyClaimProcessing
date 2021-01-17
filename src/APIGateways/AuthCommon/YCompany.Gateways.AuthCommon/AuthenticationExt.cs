@@ -10,7 +10,7 @@ namespace YCompany.Gateways.AuthCommon
     public static class AuthenticationExt
     {
         public static IServiceCollection AddTokenAuthentication(this IServiceCollection services, IConfiguration config)
-        {
+        {            
             var section = config.GetSection("JwtConfig");
             var secret = section.GetSection("secret").Value;
             var audience = section.GetSection("audience").Value;
@@ -22,7 +22,7 @@ namespace YCompany.Gateways.AuthCommon
                 x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
                 x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
             })
-            .AddJwtBearer(x =>
+            .AddJwtBearer("YCompanyTestKey",x =>
             {
                 x.TokenValidationParameters = new TokenValidationParameters
                 {

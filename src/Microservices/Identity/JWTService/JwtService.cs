@@ -14,11 +14,15 @@ namespace Identity
     {
         private readonly string _secret;
         private readonly string _expDate;
+        private readonly string _issuer;
+        private readonly string _audience;
 
         public JwtService(IConfiguration config)
         {
             _secret = config.GetSection("JwtConfig").GetSection("secret").Value;
             _expDate = config.GetSection("JwtConfig").GetSection("expirationInMinutes").Value;
+            _issuer = config.GetSection("JwtConfig").GetSection("issuer").Value;
+            _audience = config.GetSection("JwtConfig").GetSection("audience").Value;
         }
 
         public string GenerateSecurityToken(string customerId)
@@ -32,6 +36,8 @@ namespace Identity
                     new Claim(ClaimTypes.NameIdentifier, customerId)
                 }),
                 Expires = DateTime.UtcNow.AddMinutes(double.Parse(_expDate)),
+                Issuer = _issuer,
+                Audience = _audience,
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             };
 

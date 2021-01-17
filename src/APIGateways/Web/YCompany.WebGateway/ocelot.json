@@ -11,6 +11,22 @@
       ],
       "UpstreamPathTemplate": "/token/{firstName}/{lastName}",
       "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/claim/getClaims",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 9003
+        }
+      ],
+      "UpstreamPathTemplate": "/getClaims",
+      "UpstreamHttpMethod": [ "Get" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "YCompanyTestKey",
+        "AllowedScopes": []
+      }
     }
   ],
   "GlobalConfiguration": {
