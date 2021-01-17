@@ -1,18 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Text;
 
-namespace Identity.Models
+namespace ApiGateways.HttpAggregator.Models
 {
-    public class PolicyCustomer
+    public class Customer
     {
-        [Key]
         public Guid CustomerId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string MobileNumber { get; set; }
-
+        public List<Claim> Claims { get; set; }
     }
 }

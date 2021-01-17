@@ -32,6 +32,22 @@ namespace Identity.Controllers
             }
             return Ok("User not found. Please try again");
         }
-        
+
+        [HttpGet]
+        [Route("getCustomer/{id}")]        
+        public IActionResult GetCustomer(string id)
+        {
+            var guid = Guid.Parse(id);
+            var policyCustomer =
+                    _identityDBContext.PolicyCustomers.
+                        SingleOrDefault(x => x.CustomerId== guid);
+            if (policyCustomer != null)
+            {
+                return Ok(policyCustomer);
+            }
+            return Ok("User not found. Please try again");
+        }
+
+
     }
 }

@@ -24,5 +24,13 @@ namespace Claim.Controllers
         {
             return Ok(_claimDbContext.Claims.ToList());
         }
+
+        [HttpGet]
+        [Route("getClaim/{customerId}")]
+        public IActionResult GetClaim(string customerId)
+        {
+            Guid customerIdGuid = Guid.Parse(customerId);
+            return Ok(_claimDbContext.Claims.Where(x=>x.PolicyCustomerId == customerIdGuid).ToList());
+        }
     }
 }

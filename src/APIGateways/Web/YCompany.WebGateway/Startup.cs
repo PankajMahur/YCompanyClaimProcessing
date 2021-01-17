@@ -6,6 +6,7 @@ using Microsoft.Extensions.Hosting;
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
 using YCompany.Gateways.AuthCommon;
+using YCompany.Web.HttpAggregator;
 
 namespace YCompany.WebGateway
 {
@@ -22,7 +23,7 @@ namespace YCompany.WebGateway
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddTokenAuthentication(Configuration);
-            services.AddOcelot();
+            services.AddOcelot().AddSingletonDefinedAggregator<WebHttpAggregator>();
             services.AddCors(options =>
             {
                 options.AddPolicy("CorsPolicy",

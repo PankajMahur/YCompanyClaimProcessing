@@ -13,6 +13,41 @@
       "UpstreamHttpMethod": [ "Get" ]
     },
     {
+      "DownstreamPathTemplate": "/api/identity/getCustomer/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 9001
+        }
+      ],
+      "UpstreamPathTemplate": "/getCustomer/{id}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "Key": "PolicyUser",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "YCompanyTestKey",
+        "AllowedScopes": []
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/claim/getClaim/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 9003
+        }
+      ],
+      "UpstreamPathTemplate": "/getClaim/{id}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "Key": "PolicyClaim",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "YCompanyTestKey",
+        "AllowedScopes": []
+      }
+
+    },
+    {
       "DownstreamPathTemplate": "/api/claim/getClaims",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
@@ -29,8 +64,22 @@
       }
     }
   ],
-  "GlobalConfiguration": {
-    "RequestIdKey": "OcRequestId",
-    "AdministrationPath": "/administration"
-  }
+  "Aggregates": [
+    {
+      "RouteKeys": [
+        "PolicyClaim",
+        "PolicyUser"
+      ],
+      "UpstreamPathTemplate": "/UserPolicyDetails/{id}",
+      "Aggregator": "WebHttpAggregator",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "YCompanyTestKey",
+        "AllowedScopes": []
+      }
+    }
+  ],
+    "GlobalConfiguration":
+    {
+      "BaseUrl": "http://localhost:5001"
+    }
 }
