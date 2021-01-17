@@ -9,6 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\AuthCommon\YCompany.Gateways.AuthCommon\YCompany.Gateways.AuthCommon.csproj" />
     <ProjectReference Include="..\YCompany.Web.HttpAggregator\YCompany.Web.HttpAggregator.csproj" />
   </ItemGroup>
 

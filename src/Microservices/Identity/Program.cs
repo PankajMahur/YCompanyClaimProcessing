@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace YCompany.WebGateway
+namespace Identity
 {
     public class Program
     {
@@ -18,10 +18,6 @@ namespace YCompany.WebGateway
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
-                .ConfigureAppConfiguration((host, config) =>
-                    {
-                        config.AddJsonFile("ocelot.json");
-                    })
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
