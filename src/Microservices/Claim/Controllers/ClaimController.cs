@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Claim.Service;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -10,19 +11,19 @@ namespace Claim.Controllers
     [Route("api/[controller]")]
     public class ClaimController : ControllerBase
     {
-        private readonly ClaimDbContext _claimDbContext;
+        private readonly ClaimService _claimService;
         
 
-        public ClaimController(ClaimDbContext claimDbContext)
+        public ClaimController(ClaimService claimService)
         {
-            _claimDbContext = claimDbContext;
+            _claimService = claimService;
         }
 
         [HttpGet]
         [Route("getClaims")]
         public IActionResult Get()
         {
-            return Ok(_claimDbContext.Claims.ToList());
+            return Ok(_claimService.GetClaims());
         }
 
         [HttpGet]
@@ -30,7 +31,7 @@ namespace Claim.Controllers
         public IActionResult GetClaim(string customerId)
         {
             Guid customerIdGuid = Guid.Parse(customerId);
-            return Ok(_claimDbContext.Claims.Where(x=>x.PolicyCustomerId == customerIdGuid).ToList());
+            return Ok(_claimService.GetClaims().Where(x=>x.PolicyCustomerId == customerIdGuid).ToList());
         }
     }
 }

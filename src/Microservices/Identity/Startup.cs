@@ -1,3 +1,5 @@
+using Identity.Repository;
+using Identity.Service;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -29,6 +31,8 @@ namespace Identity
             services.AddControllers();
             services.AddDbContext<IdentityDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("SqlConnection")));
             services.AddSingleton<JwtService>();
+            services.AddTransient<IdentityRepository>();
+            services.AddTransient<IdentityService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

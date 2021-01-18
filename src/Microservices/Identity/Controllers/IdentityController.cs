@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Identity.Service;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -10,12 +11,12 @@ namespace Identity.Controllers
     [Route("api/[controller]")]
     public class IdentityController : ControllerBase
     {
-        private readonly IdentityDBContext _identityDBContext;
+        private readonly IdentityService _identityService;
         private readonly JwtService _jwtService;
 
-        public IdentityController(IdentityDBContext identityDBContext, JwtService jwtService)
+        public IdentityController(IdentityService identityService, JwtService jwtService)
         {
-            _identityDBContext = identityDBContext;
+            _identityService = identityService;
             _jwtService = jwtService;
         }
         
@@ -24,7 +25,7 @@ namespace Identity.Controllers
         public IActionResult Get(string firstName, string lastName)
         {
             var policyCustomer =
-                    _identityDBContext.PolicyCustomers.
+                    _identityService.GetPolicyCustomers().
                         SingleOrDefault(x => x.FirstName == firstName && x.LastName == lastName);
             if (policyCustomer != null)
             {
@@ -39,7 +40,7 @@ namespace Identity.Controllers
         {
             var guid = Guid.Parse(id);
             var policyCustomer =
-                    _identityDBContext.PolicyCustomers.
+                    _identityService.GetPolicyCustomers().
                         SingleOrDefault(x => x.CustomerId== guid);
             if (policyCustomer != null)
             {

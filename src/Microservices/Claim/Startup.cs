@@ -1,3 +1,5 @@
+using Claim.Respository;
+using Claim.Service;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -28,6 +30,8 @@ namespace Claim
         {
             services.AddControllers();
             services.AddDbContext<ClaimDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("SqlConnection")));
+            services.AddTransient<ClaimRepository>();
+            services.AddTransient<ClaimService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
