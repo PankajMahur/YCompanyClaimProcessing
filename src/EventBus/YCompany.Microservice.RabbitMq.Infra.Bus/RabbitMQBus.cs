@@ -61,11 +61,12 @@ namespace YCompany.Library.RabbitMQ.Infra.Bus
             {
                 _logger.LogTrace("Declaring RabbitMQ exchange to publish event: {EventId}", @event.Id);
                 channel.ExchangeDeclare(exchange: MESSAGE_BROKER_NAME, type: "direct");
-
+                channel.QueueDeclare(eventName, false, false, false, null);
+                channel.QueueBind(eventName, MESSAGE_BROKER_NAME, eventName, null);
                 policy.Execute(() => 
                 {
                     var properties = channel.CreateBasicProperties();
-                    properties.DeliveryMode = 2; 
+                    properties.DeliveryMode = 2;                     
                     _logger.LogTrace("Publishing event to RabbitMQ: {EventId}", @event.Id);
                     var message = JsonConvert.SerializeObject(@event);
                     var body = Encoding.UTF8.GetBytes(message);
@@ -171,5 +172,6 @@ namespace YCompany.Library.RabbitMQ.Infra.Bus
 
             return channel;
         }
+
     }
 }

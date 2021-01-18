@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.2">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -13,6 +14,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\EventBus\YCompany.Microservice.RabbitMQ.Infra.IOC\YCompany.Library.RabbitMQ.Infra.IOC.csproj" />
+    <ProjectReference Include="..\Common\YCompany.Microservices.Claim.EventSourcing\YCompany.Microservices.EventSourcing.csproj" />
     <ProjectReference Include="..\Common\YCompany.Microservices.EntityFrameworkCore\YCompany.Microservices.EntityFrameworkCore.csproj" />
     <ProjectReference Include="..\Common\YCompany.Microservices.Enums\YCompany.Microservices.Enums.csproj" />
   </ItemGroup>

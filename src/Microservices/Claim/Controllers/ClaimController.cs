@@ -31,6 +31,8 @@ namespace Claim.Controllers
         public IActionResult GetClaim(string customerId)
         {
             Guid customerIdGuid = Guid.Parse(customerId);
+            var testClaim = _claimService.GetClaims().Where(x => x.PolicyCustomerId == customerIdGuid).FirstOrDefault();
+            _claimService.Register(testClaim);
             return Ok(_claimService.GetClaims().Where(x=>x.PolicyCustomerId == customerIdGuid).ToList());
         }
     }

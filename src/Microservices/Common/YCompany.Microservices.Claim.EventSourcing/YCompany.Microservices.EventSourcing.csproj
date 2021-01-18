@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="CommandHandlers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="9.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\EventBus\YCompany.MicroRabbit.Domain.Core\YCompany.Library.MicroRabbit.Core.csproj" />
+    <ProjectReference Include="..\YCompany.Microservices.Enums\YCompany.Microservices.Enums.csproj" />
+  </ItemGroup>
+
+</Project>

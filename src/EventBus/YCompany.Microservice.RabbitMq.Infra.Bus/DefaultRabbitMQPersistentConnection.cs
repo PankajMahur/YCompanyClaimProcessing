@@ -18,7 +18,7 @@ namespace YCompany.Library.RabbitMQ.Infra.Bus
         IConnection _connection;
         bool _disposed;
         object lockObject = new object();
-        
+
         public DefaultRabbitMQPersistentConnection(IConnectionFactory connectionFactory, ILogger<DefaultRabbitMQPersistentConnection> logger, int retryCount = 5)
         {
             _connectionFactory = connectionFactory ?? throw new ArgumentNullException(nameof(connectionFactory));
@@ -39,7 +39,7 @@ namespace YCompany.Library.RabbitMQ.Infra.Bus
             if (!IsConnected)
             {
                 throw new InvalidOperationException("No RabbitMQ connections are available to perform this action");
-            } 
+            }
             return _connection.CreateModel();
         }
 
@@ -51,7 +51,8 @@ namespace YCompany.Library.RabbitMQ.Infra.Bus
 
             try
             {
-                _connection.Dispose();
+                if (_connection != null)
+                    _connection.Dispose();
             }
             catch (IOException ex)
             {

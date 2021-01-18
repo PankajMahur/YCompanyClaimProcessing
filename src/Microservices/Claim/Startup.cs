@@ -1,5 +1,6 @@
 using Claim.Respository;
 using Claim.Service;
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -12,7 +13,11 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
+using YCompany.Library.RabbitMQ.Infra.IOC;
+using YCompany.Microservices.EventSourcing.Commands.Claim;
+using YCompany.Microservices.EventSourcing.EventHandlers.Claim;
 
 namespace Claim
 {
@@ -32,6 +37,10 @@ namespace Claim
             services.AddDbContext<ClaimDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("SqlConnection")));
             services.AddTransient<ClaimRepository>();
             services.AddTransient<ClaimService>();
+            services.AddMediatR(typeof(Startup).GetTypeInfo().Assembly);
+            services.AddTransient<IRequestHandler<RegisterClaimCommand, bool>, RegisterClaimHandler>();
+            services.RegisterEventBusServices(Configuration);      
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
