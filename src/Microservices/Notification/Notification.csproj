@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\EventBus\YCompany.Microservice.RabbitMQ.Infra.IOC\YCompany.Library.RabbitMQ.Infra.IOC.csproj" />
+    <ProjectReference Include="..\Common\YCompany.Microservices.Claim.EventSourcing\YCompany.Microservices.EventSourcing.csproj" />
+  </ItemGroup>
+
+
+</Project>

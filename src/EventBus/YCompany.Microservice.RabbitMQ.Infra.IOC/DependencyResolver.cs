@@ -11,14 +11,14 @@ namespace YCompany.Library.RabbitMQ.Infra.IOC
 {
     public static class DependencyResolver
     {
-        public static void RegisterEventBusServices(this IServiceCollection services, IConfiguration configuration)
+        public static void RegisterEventBusServices(this IServiceCollection services, IConfiguration configuration, bool isDispatchConsumersAsync=false)
         {
             //Rabbit MQ Connection Factory
             services.AddSingleton<IConnectionFactory>(sp => {
                 var factory = new ConnectionFactory()
                 {
                     HostName = configuration["EventBus:HostName"],
-                    //DispatchConsumersAsync = true,
+                    DispatchConsumersAsync = isDispatchConsumersAsync,
                     UserName = configuration["EventBus:UserName"],
                     Password = configuration["EventBus:Password"]
                 };
@@ -26,7 +26,7 @@ namespace YCompany.Library.RabbitMQ.Infra.IOC
                 return factory;
             });
 
-            //Domain bus
+            //RabbitMQ bus
             services.AddTransient<IEventBus, RabbitMQBus>();
 
             //RabittMQ Persistent Connection

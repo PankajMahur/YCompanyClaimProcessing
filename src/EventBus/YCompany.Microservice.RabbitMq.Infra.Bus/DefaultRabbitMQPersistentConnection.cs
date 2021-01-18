@@ -75,7 +75,7 @@ namespace YCompany.Library.RabbitMQ.Infra.Bus
                 );
 
                 policy.Execute(() =>
-                {
+                {                    
                     _connection = _connectionFactory
                           .CreateConnection();
                 });

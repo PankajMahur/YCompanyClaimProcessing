@@ -160,10 +160,12 @@ namespace YCompany.Library.RabbitMQ.Infra.Bus
                                     type: "direct");
 
             channel.QueueDeclare(queue: eventName,
-                                 durable: true,
+                                 durable: false,
                                  exclusive: false,
                                  autoDelete: false,
                                  arguments: null);
+            
+            channel.QueueBind(eventName, MESSAGE_BROKER_NAME, eventName, null);
 
             channel.CallbackException += (sender, ea) =>
             {
