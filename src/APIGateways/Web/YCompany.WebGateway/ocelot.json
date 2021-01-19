@@ -2,11 +2,11 @@
   "Routes": [
     {
       "DownstreamPathTemplate": "/api/identity/getToken/{firstName}/{lastName}",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 9001
+          "Host": "ycompany.identity.api",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/token/{firstName}/{lastName}",
@@ -14,11 +14,11 @@
     },
     {
       "DownstreamPathTemplate": "/api/identity/getCustomer/{id}",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 9001
+          "Host": "ycompany.identity.api",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/getCustomer/{id}",
@@ -31,11 +31,11 @@
     },
     {
       "DownstreamPathTemplate": "/api/claim/getClaim/{id}",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 9003
+          "Host": "ycompany.claim.api",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/getClaim/{id}",
@@ -49,11 +49,11 @@
     },
     {
       "DownstreamPathTemplate": "/api/claim/getClaims",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 9003
+          "Host": "ycompany.claim.api",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/getClaims",

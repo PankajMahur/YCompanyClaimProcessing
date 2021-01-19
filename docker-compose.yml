@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   rabbitmq:
-    image: rabbitmq:3.7-management
+    image: rabbitmq:3-management
     container_name: rabbitmq
     hostname: rabbit    
     ports:
@@ -38,3 +38,27 @@ services:
     depends_on:
       - db1
       - rabbitmq
+  
+  ycompany.notification.api:
+    image: ${DOCKER_REGISTRY-}ycompanynotificationapi
+    build:
+      context: .
+      dockerfile: src/Microservices/Notification/Dockerfile
+    depends_on:
+      - rabbitmq
+
+  ycompany.webgateway:
+    image: ${DOCKER_REGISTRY-}ycompanywebgateway
+    build:
+      context: .
+      dockerfile: src/APIGateways/Web/YCompany.WebGateway/Dockerfile
+
+    depends_on:
+    - db
+    - db1
+    - rabbitmq
+    - ycompany.identity.api
+    - ycompany.claim.api
+
+  
+

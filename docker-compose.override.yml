@@ -21,3 +21,24 @@ services:
       - "9003:443"
     volumes:
       - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+
+  ycompany.notification.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - EventBusHostName=rabbit
+    ports:
+      - "9004:80"
+      - "9005:443"
+    volumes:
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+
+  ycompany.webgateway:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "9050:80"
+      - "9051:443"
+    volumes:
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+
+  

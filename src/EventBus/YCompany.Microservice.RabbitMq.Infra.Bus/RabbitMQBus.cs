@@ -20,7 +20,7 @@ namespace YCompany.Library.RabbitMQ.Infra.Bus
 {
     public sealed class RabbitMQBus : IEventBus
     {
-        const string MESSAGE_BROKER_NAME = "YCompanyEventBus";
+        const string MESSAGE_BROKER_NAME = "YCompanyMessageExchange";
         private readonly IMediator _medidator;
         private readonly IRabbitMQPersistentConnection _rabbitMQPersistentConnection;
         private readonly ILogger<RabbitMQBus> _logger;
