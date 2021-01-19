@@ -1,0 +1,18 @@
+version: '3.4'
+
+services:
+  db:
+    image: "mcr.microsoft.com/mssql/server:2017-latest"
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Djhsd12jk
+    ports:
+      - 1933:1433
+
+  ycompany.identity.api:
+    image: ${DOCKER_REGISTRY-}ycompanyidentityapi
+    build:
+      context: .
+      dockerfile: src/Microservices/Identity/Dockerfile
+    depends_on:
+      - db
