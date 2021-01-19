@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Aggregator.Models\ApiGateways.HttpAggregator.Models\ApiGateways.HttpAggregator.Models.csproj" />
+    <ProjectReference Include="..\..\Aggregator.Models\ApiGateways.HttpAggregator.Models\ApiGateways.HttpAggregator.Models.csproj" />
   </ItemGroup>
 
 </Project>
