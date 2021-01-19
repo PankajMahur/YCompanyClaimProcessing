@@ -29,9 +29,16 @@ namespace Identity.Controllers
                         SingleOrDefault(x => x.FirstName == firstName && x.LastName == lastName);
             if (policyCustomer != null)
             {
-                return Ok(_jwtService.GenerateSecurityToken(policyCustomer.CustomerId.ToString()));
-            }
-            return Ok("User not found. Please try again");
+                var response = new
+                {
+                    token = _jwtService.GenerateSecurityToken(policyCustomer.CustomerId.ToString()),
+                    success = true,
+                    user = policyCustomer
+                };
+                return Ok(response);
+            }               
+            
+            return Ok(new { error = "User not found. Please try again", success = false });
         }
 
         [HttpGet]
