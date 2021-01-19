@@ -34,7 +34,7 @@ namespace Claim
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddDbContext<ClaimDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("SqlConnection")));
+            services.AddDbContext<ClaimDbContext>(options => options.UseSqlServer(Configuration["SqlConnection"]));
             services.AddTransient<ClaimRepository>();
             services.AddTransient<ClaimService>();
             services.AddMediatR(typeof(Startup).GetTypeInfo().Assembly);

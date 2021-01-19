@@ -17,10 +17,10 @@ namespace YCompany.Library.RabbitMQ.Infra.IOC
             services.AddSingleton<IConnectionFactory>(sp => {
                 var factory = new ConnectionFactory()
                 {
-                    HostName = configuration["EventBus:HostName"],
+                    HostName = configuration["EventBusHostName"],
                     DispatchConsumersAsync = isDispatchConsumersAsync,
-                    UserName = configuration["EventBus:UserName"],
-                    Password = configuration["EventBus:Password"]
+                    UserName = configuration["EventBusUserName"],
+                    Password = configuration["EventBusPassword"]
                 };
 
                 return factory;

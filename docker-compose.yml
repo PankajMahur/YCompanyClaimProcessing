@@ -1,6 +1,13 @@
 version: '3.4'
 
 services:
+  rabbitmq:
+    image: rabbitmq:3.7-management
+    container_name: rabbitmq
+    hostname: rabbit    
+    ports:
+      - "15672:15672"
+      - "5672:5672"
   db:
     image: "mcr.microsoft.com/mssql/server:2017-latest"
     environment:
@@ -8,6 +15,13 @@ services:
       - SA_PASSWORD=Djhsd12jk
     ports:
       - 1933:1433
+  db1:
+    image: "mcr.microsoft.com/mssql/server:2017-latest"
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Djhsd12jk
+    ports:
+      - 1934:1433
 
   ycompany.identity.api:
     image: ${DOCKER_REGISTRY-}ycompanyidentityapi
@@ -16,3 +30,11 @@ services:
       dockerfile: src/Microservices/Identity/Dockerfile
     depends_on:
       - db
+  ycompany.claim.api:
+    image: ${DOCKER_REGISTRY-}ycompanyclaimapi
+    build:
+      context: .
+      dockerfile: src/Microservices/Claim/Dockerfile
+    depends_on:
+      - db1
+      - rabbitmq

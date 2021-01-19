@@ -4,8 +4,20 @@ services:
   ycompany.identity.api:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
+      - SqlConnection=Server=db;Initial Catalog=YCompany.Microservice.IdentityDb;User Id=sa;Password=Djhsd12jk
     ports:
       - "9000:80"
       - "9001:443"
+    volumes:
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+  
+  ycompany.claim.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - SqlConnection=Server=db1;Initial Catalog=YCompany.Microservice.ClaimDb;User Id=sa;Password=Djhsd12jk
+      - EventBusHostName=rabbit
+    ports:
+      - "9002:80"
+      - "9003:443"
     volumes:
       - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro

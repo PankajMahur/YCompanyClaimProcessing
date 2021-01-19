@@ -29,7 +29,7 @@ namespace Identity
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddDbContext<IdentityDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("SqlConnection")));
+            services.AddDbContext<IdentityDBContext>(options => options.UseSqlServer(Configuration["SqlConnection"]));
             services.AddSingleton<JwtService>();
             services.AddTransient<IdentityRepository>();
             services.AddTransient<IdentityService>();
