@@ -10,8 +10,6 @@ const API_URL = 'http://localhost:9050';
 })
 export class UserService {
 
-  policyUser : PolicyUser;
-
   constructor(private http: HttpClient) {
 
    }
@@ -20,8 +18,8 @@ export class UserService {
     return this.http.get(API_URL + 'all', { responseType: 'text' });
   }
 
-  getUserClaims(): Observable<any> {
-    return this.http.get(API_URL + 'getClaim/' + this.policyUser.customerId, { responseType: 'json' });
+  getUserClaims(customerId: string): Observable<any> {
+    return this.http.get(API_URL + '/getClaim/' + customerId, { responseType: 'json' });
   }
 
   getModeratorBoard(): Observable<any> {

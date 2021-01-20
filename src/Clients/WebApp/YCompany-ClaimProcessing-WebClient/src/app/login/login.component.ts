@@ -31,8 +31,8 @@ export class LoginComponent implements OnInit {
       data => {
         if(data.success)
         {
-        this.tokenStorage.saveToken(data.accessToken);
-        this.tokenStorage.saveUser(data);
+        this.tokenStorage.saveToken(data.token);
+        this.tokenStorage.saveUser(data.user);
         this.isLoginFailed = false;
         this.isLoggedIn = true;
         this.user = this.tokenStorage.getUser();
@@ -52,7 +52,7 @@ export class LoginComponent implements OnInit {
   }
 
   loadUserClaims(): void {
-    this.router.navigateByUrl('/claims');
+    window.location.reload();
   }
 
 }
