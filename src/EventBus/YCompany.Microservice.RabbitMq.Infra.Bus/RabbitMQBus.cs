@@ -60,8 +60,8 @@ namespace YCompany.Library.RabbitMQ.Infra.Bus
             using (var channel = _rabbitMQPersistentConnection.CreateModel())
             {
                 _logger.LogTrace("Declaring RabbitMQ exchange to publish event: {EventId}", @event.Id);
-                channel.ExchangeDeclare(exchange: MESSAGE_BROKER_NAME, type: "direct");
-                channel.QueueDeclare(eventName, false, false, false, null);
+                channel.ExchangeDeclare(exchange: MESSAGE_BROKER_NAME, type: "direct",durable: true);
+                channel.QueueDeclare(eventName, true, false, false, null);
                 channel.QueueBind(eventName, MESSAGE_BROKER_NAME, eventName, null);
                 policy.Execute(() => 
                 {
@@ -157,10 +157,10 @@ namespace YCompany.Library.RabbitMQ.Infra.Bus
             var channel = _rabbitMQPersistentConnection.CreateModel();
 
             channel.ExchangeDeclare(exchange: MESSAGE_BROKER_NAME,
-                                    type: "direct");
+                                    type: "direct",durable:true);
 
             channel.QueueDeclare(queue: eventName,
-                                 durable: false,
+                                 durable: true,
                                  exclusive: false,
                                  autoDelete: false,
                                  arguments: null);
