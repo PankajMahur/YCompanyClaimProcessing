@@ -7,7 +7,6 @@ namespace YCompany.Microservices.Enums
     public enum PolicyStatus
     {
         Expired = 0,
-        Active
     }
 
     public enum ClaimStatus

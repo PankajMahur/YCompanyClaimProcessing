@@ -20,9 +20,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\EventBus\YCompany.Microservice.RabbitMQ.Infra.IOC\YCompany.Library.RabbitMQ.Infra.IOC.csproj" />
-    <ProjectReference Include="..\Common\YCompany.Microservices.Claim.EventSourcing\YCompany.Microservices.EventSourcing.csproj" />
     <ProjectReference Include="..\Common\YCompany.Microservices.EntityFrameworkCore\YCompany.Microservices.EntityFrameworkCore.csproj" />
-    <ProjectReference Include="..\Common\YCompany.Microservices.Enums\YCompany.Microservices.Enums.csproj" />
+    <ProjectReference Include="..\Common\YCompany.Microservices.Enums\YCompany.Microservices.Domain.csproj" />
   </ItemGroup>
 
 

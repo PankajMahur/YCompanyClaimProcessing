@@ -1,20 +1,13 @@
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Threading.Tasks;
 using YCompany.Library.MicroRabbit.Core.Bus;
 using YCompany.Library.RabbitMQ.Infra.IOC;
-using YCompany.Microservices.EventSourcing.EventHandlers.Claim;
+using YCompany.Microservices.Claim.EventHandlers;
 using YCompany.Microservices.EventSourcing.Events.Claim;
 
 namespace Notification

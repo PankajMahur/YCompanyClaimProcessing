@@ -8,13 +8,13 @@ using YCompany.Library.MicroRabbit.Core.Bus;
 using YCompany.Microservices.EventSourcing.Commands.Claim;
 using YCompany.Microservices.EventSourcing.Events.Claim;
 
-namespace YCompany.Microservices.EventSourcing.EventHandlers.Claim
+namespace YCompany.Microservices.Claim.CommandHandlers
 {
-    public class RegisterClaimHandler : IRequestHandler<RegisterClaimCommand, bool>
+    public class RegisterClaimCommandHandler : IRequestHandler<RegisterClaimCommand, bool>
     {
         private readonly IEventBus _eventBus;
         
-        public RegisterClaimHandler(IEventBus eventBus)
+        public RegisterClaimCommandHandler(IEventBus eventBus)
         {
             _eventBus = eventBus;
         }

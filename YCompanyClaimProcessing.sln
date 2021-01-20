@@ -43,11 +43,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{353D26
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YCompany.Microservices.EntityFrameworkCore", "src\Microservices\Common\YCompany.Microservices.EntityFrameworkCore\YCompany.Microservices.EntityFrameworkCore.csproj", "{5B3F3772-3F37-4D8F-A084-D4C8E12EF87F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YCompany.Microservices.Enums", "src\Microservices\Common\YCompany.Microservices.Enums\YCompany.Microservices.Enums.csproj", "{383A09B2-259F-47CA-BC26-DFFDBAE3791D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YCompany.Microservices.Domain", "src\Microservices\Common\YCompany.Microservices.Enums\YCompany.Microservices.Domain.csproj", "{383A09B2-259F-47CA-BC26-DFFDBAE3791D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aggregator.Models", "Aggregator.Models", "{CB2C54A0-1841-430A-95F3-7ABACEF99FF1}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YCompany.Microservices.EventSourcing", "src\Microservices\Common\YCompany.Microservices.Claim.EventSourcing\YCompany.Microservices.EventSourcing.csproj", "{8B3868CF-301B-49BD-B5DB-7E38C8CE985B}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YCompany.Notification.API", "src\Microservices\Notification\YCompany.Notification.API.csproj", "{B3F544DC-21C4-490A-9B3C-9041221C10A2}"
 EndProject
@@ -138,10 +136,6 @@ Global
 		{383A09B2-259F-47CA-BC26-DFFDBAE3791D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{383A09B2-259F-47CA-BC26-DFFDBAE3791D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{383A09B2-259F-47CA-BC26-DFFDBAE3791D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8B3868CF-301B-49BD-B5DB-7E38C8CE985B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8B3868CF-301B-49BD-B5DB-7E38C8CE985B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8B3868CF-301B-49BD-B5DB-7E38C8CE985B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8B3868CF-301B-49BD-B5DB-7E38C8CE985B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B3F544DC-21C4-490A-9B3C-9041221C10A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B3F544DC-21C4-490A-9B3C-9041221C10A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B3F544DC-21C4-490A-9B3C-9041221C10A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -184,7 +178,6 @@ Global
 		{5B3F3772-3F37-4D8F-A084-D4C8E12EF87F} = {353D2626-2501-4938-B68D-E453C17F1269}
 		{383A09B2-259F-47CA-BC26-DFFDBAE3791D} = {353D2626-2501-4938-B68D-E453C17F1269}
 		{CB2C54A0-1841-430A-95F3-7ABACEF99FF1} = {CA392611-BCBD-4492-8DF2-31F7AFAAE8A5}
-		{8B3868CF-301B-49BD-B5DB-7E38C8CE985B} = {353D2626-2501-4938-B68D-E453C17F1269}
 		{B3F544DC-21C4-490A-9B3C-9041221C10A2} = {F0E1C524-535B-4DAD-A028-09F16D7D42CC}
 		{00CF73A5-E4A6-4E26-AC86-32D67A1951DC} = {8B356D86-B3B3-4EEB-BEEA-2962617AE9B3}
 		{B2A03E61-84D1-48EB-A7BB-B9CAAD8326FD} = {8B356D86-B3B3-4EEB-BEEA-2962617AE9B3}

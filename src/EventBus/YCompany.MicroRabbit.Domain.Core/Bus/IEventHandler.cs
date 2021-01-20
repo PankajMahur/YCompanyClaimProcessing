@@ -10,5 +10,7 @@ namespace YCompany.Library.MicroRabbit.Core.Bus
     }
 
     public interface IEventHandler
-    { }
+    {
+       
+    }
 }

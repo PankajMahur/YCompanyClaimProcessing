@@ -3,21 +3,14 @@ using Claim.Service;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Threading.Tasks;
 using YCompany.Library.RabbitMQ.Infra.IOC;
+using YCompany.Microservices.Claim.CommandHandlers;
 using YCompany.Microservices.EventSourcing.Commands.Claim;
-using YCompany.Microservices.EventSourcing.EventHandlers.Claim;
 
 namespace Claim
 {
@@ -38,7 +31,7 @@ namespace Claim
             services.AddTransient<ClaimRepository>();
             services.AddTransient<ClaimService>();
             services.AddMediatR(typeof(Startup).GetTypeInfo().Assembly);
-            services.AddTransient<IRequestHandler<RegisterClaimCommand, bool>, RegisterClaimHandler>();
+            services.AddTransient<IRequestHandler<RegisterClaimCommand, bool>, RegisterClaimCommandHandler>();
             services.RegisterEventBusServices(Configuration);      
 
         }

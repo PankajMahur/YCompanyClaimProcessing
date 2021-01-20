@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using YCompany.Library.MicroRabbit.Core.Commands;
 using YCompany.Microservices.Enums;
 
-namespace YCompany.Microservices.EventSourcing.Commands.Claim
+namespace YCompany.Microservices.Domain
 {
     public abstract class ClaimCommand : Command
     {
