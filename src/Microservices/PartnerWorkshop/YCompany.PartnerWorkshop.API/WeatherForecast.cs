@@ -1,6 +1,6 @@
 using System;
 
-namespace YCompany.DocumentStorage.API
+namespace YCompany.PartnerWorkshop.API
 {
     public class WeatherForecast
     {

@@ -11,7 +11,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace YCompany.DocumentStorage.API
+namespace YCompany.Storage.API
 {
     public class Startup
     {

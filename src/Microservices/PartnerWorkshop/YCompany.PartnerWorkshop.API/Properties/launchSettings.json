@@ -4,8 +4,8 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:53403",
-      "sslPort": 44366
+      "applicationUrl": "http://localhost:56607",
+      "sslPort": 44305
     }
   },
   "profiles": {
@@ -17,7 +17,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "YCompany.DocumentStorage.API": {
+    "YCompany.PartnerWorkshop.API": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "weatherforecast",
