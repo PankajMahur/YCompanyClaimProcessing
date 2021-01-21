@@ -92,15 +92,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "VehicleRental", "VehicleRen
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Workshop", "Workshop", "{50901C42-EC54-4482-8B10-FC3529A8A2E9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YCompany.Insurance.API", "src\Microservices\Insurance\YCompany.Insurance.API\YCompany.Insurance.API.csproj", "{EB34FAAA-F59A-45D0-943D-218CB19DC222}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Insurance", "src\Microservices\Insurance\YCompany.Insurance.API\YCompany.Insurance.API.csproj", "{EB34FAAA-F59A-45D0-943D-218CB19DC222}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YCompany.DocumentStorage.API", "src\Microservices\DocumentStorage\YCompany.DocumentStorage.API\YCompany.DocumentStorage.API.csproj", "{3A798819-906B-4B3F-BEA8-FF707F7447F0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentStorage", "src\Microservices\DocumentStorage\YCompany.DocumentStorage.API\YCompany.DocumentStorage.API.csproj", "{3A798819-906B-4B3F-BEA8-FF707F7447F0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YCompany.Payment.API", "src\Microservices\Payment\YCompany.Payment.API\YCompany.Payment.API.csproj", "{92FA836F-FD42-46F0-8B56-296473CC19AF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Payment", "src\Microservices\Payment\YCompany.Payment.API\YCompany.Payment.API.csproj", "{92FA836F-FD42-46F0-8B56-296473CC19AF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YCompany.VehicleRental.API", "src\Microservices\VehicleRental\YCompany.VehicleRental.API\YCompany.VehicleRental.API.csproj", "{519209F3-0A05-41AD-9976-42E0BB1AAD1D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VehicleRental", "src\Microservices\VehicleRental\YCompany.VehicleRental.API\YCompany.VehicleRental.API.csproj", "{519209F3-0A05-41AD-9976-42E0BB1AAD1D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YCompany.PartnerWorkshop.API", "src\Microservices\Workshop\YCompany.PartnerWorkshop.API\YCompany.PartnerWorkshop.API.csproj", "{D44E48F7-3A63-4054-83D9-883E3F042D5B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Workshop", "src\Microservices\Workshop\YCompany.PartnerWorkshop.API\YCompany.PartnerWorkshop.API.csproj", "{D44E48F7-3A63-4054-83D9-883E3F042D5B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
